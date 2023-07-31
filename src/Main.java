@@ -71,7 +71,7 @@ class Pawn {
 
 class Board {
 
-    public int max_position = 100;
+    private int max_position = 100;
 
     public ArrayList<Pawn> pawns;
     public Dice dice;
@@ -96,7 +96,7 @@ class Board {
             pawn.AddPosition(rollResult);
             Log.info(pawn.name + " new position: " + pawn.GetPosition());
 
-            if(pawn.GetPosition() >= Board.GetMaxRoad()) {
+            if(pawn.GetPosition() >= GetMaxRoad()) {
                 this.winner = pawn;
                 throw new WinnerWasCalled();
             }
